@@ -1,5 +1,7 @@
 version: 0.0
 os: linux
+github_user: pnarendran23
+github_token: XXXXXX
 files:
    - source: /
      destination: /var/www/html
@@ -18,6 +20,10 @@ hooks:
       runas: root
     - location: Scripts/startapache.sh
       runas: root
+    - location: Scripts/build.sh
+      runas: root
    AfterInstall:
     - location: Scripts/restartapache.sh
+      runas: root
+    - location: Scripts/deploy.sh
       runas: root
